@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Options</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .auth-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .auth-button {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .auth-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <h1>Welcome! Please sign in.</h1>
+        <button class="auth-button" onclick="redirectToEntraID()">Sign in with Microsoft</button>
+        <button class="auth-button" onclick="redirectToPingFederate()">Login with FAMS</button>
+    </div>
+
+    <script>
+        function redirectToEntraID() {
+            window.location.href = 'https://entraID-authentication-url.com?redirect_uri=https://<your-username>.github.io/auth-options/callback';
+        }
+
+        function redirectToPingFederate() {
+            window.location.href = 'https://pingfederate-authentication-url.com?redirect_uri=https://<your-username>.github.io/auth-options/callback';
+        }
+    </script>
+</body>
+</html>
